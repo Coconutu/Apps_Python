@@ -9,3 +9,5 @@ if divizor:
     print("Nu e prim!")
 else:
     print("E prim!")
+    #comment
+
