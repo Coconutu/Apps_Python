@@ -10,14 +10,27 @@
 # set2 = {12.5,8.7,4,"text",("un","tuplu")}
 # print("Altă mulțime:",set2
 #
-set1 = {'A','B','C'}
-print('Setul inițial:',set1)
-set1.add('D') #doar un element
-set1.update('E','F','G') #mai multe deodată
-print('După adăugări:',set1)
-#ștergem elementul 'E'
-set1.discard('E')
-#ștergem elementul 'B'
-set1.remove('B')
-#afișăm lista modificată
-print('După ștergeri:',set1)
+# set1 = {'A','B','C'}
+# print('Setul inițial:',set1)
+# set1.add('D') #doar un element
+# set1.update('E','F','G') #mai multe deodată
+# print('După adăugări:',set1)
+# #ștergem elementul 'E'
+# set1.discard('E')
+# #ștergem elementul 'B'
+# set1.remove('B')
+# #afișăm lista modificată
+# print('După ștergeri:',set1)
+
+A = {1,2,3,4,5,6,7}
+B = {5,6,7,8,9,10}
+#reuniunea
+print(A|B)
+#intersecția
+print(A&B)
+#diferența dintre A și B
+print(A-B)
+#diferența dintre B și A
+print(B-A)
+#diferența simetrică
+print(A^B)
