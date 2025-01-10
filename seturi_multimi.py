@@ -39,4 +39,11 @@ print(B.difference(A))
 #diferența simetrică
 print(A^B)
 
+# frozenset
+fA = frozenset({1,2,3,4,5})
+print(fA)
+#obținem eroare dacă ștergem ceva
+#fA.discard(1)
+#obținem eroare dacă adăugăm ceva
+#fA.append(6)
 
