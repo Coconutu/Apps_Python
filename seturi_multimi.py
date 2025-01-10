@@ -26,11 +26,17 @@ A = {1,2,3,4,5,6,7}
 B = {5,6,7,8,9,10}
 #reuniunea
 print(A|B)
+print(A.union(B))
 #intersecția
 print(A&B)
+print(A.intersection(B))
 #diferența dintre A și B
 print(A-B)
+print(A.difference(B))
 #diferența dintre B și A
 print(B-A)
+print(B.difference(A))
 #diferența simetrică
 print(A^B)
+
+
