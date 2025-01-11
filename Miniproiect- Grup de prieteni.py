@@ -36,6 +36,7 @@ for x in total_prieteni:
     print(x)
 print('------------------------------')
 prieten=input("Introduceti numele prietenului pentru a afla intalnirile unde a participat:")
+print(prieten," a participat la intalnirile din orasele:")
 if prieten in int1:
     print(int1[1])
 if prieten in int2:
