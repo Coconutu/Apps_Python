@@ -1,5 +1,5 @@
 import random
-numar=random.randint(1,20)
+numar=random.randint(1,50)
 ghicit=False
 while ghicit==False:
     introdus=int(input('Scrie numarul:'))
