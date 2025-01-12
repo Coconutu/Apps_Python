@@ -26,3 +26,17 @@ afisare_lista(lista_de_int)
 print("creare lista float")
 lista_de_float=creare_lista_float(a)
 afisare_lista(lista_de_float)
+
+def ad3(a,b,c,tip):
+    if tip=='str':
+        return str(a)+str(b)+str(c)
+    elif tip=='int':
+        return int(a)+int(b)+int(c)
+    elif tip=='float':
+        return float(a)+float(b)+float(c)
+    return a+b+c
+print("Introduceti numerele a,b,c pentru a efectua operatia ad3")
+x,y,z=input(),input(),input()
+print(ad3(x,y,z,'str'))
+print(ad3(x,y,z,'int'))
+print(ad3(x,y,z,'float'))
