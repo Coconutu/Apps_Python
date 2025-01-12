@@ -34,9 +34,13 @@ def ad3(a,b,c,tip):
         return int(a)+int(b)+int(c)
     elif tip=='float':
         return float(a)+float(b)+float(c)
+    elif tip == 'list':
+        l=list[a,b,c]
+        return l
     return a+b+c
 print("Introduceti numerele a,b,c pentru a efectua operatia ad3")
 x,y,z=input(),input(),input()
 print(ad3(x,y,z,'str'))
 print(ad3(x,y,z,'int'))
 print(ad3(x,y,z,'float'))
+print(ad3(x,y,z,'list'))
