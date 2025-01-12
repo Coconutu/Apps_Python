@@ -13,9 +13,14 @@ def creare_lista_float(n):
         x=float(input('Elementul'+str(i)+":"))
         lista_float.append(x)
     return lista_float
+def afisare_lista(l):
+    for i in l:
+        print(i)
 
 a=int(input("Cate elemente sa aibe listele int si float?"))
 print("creare lista int")
-print(creare_lista_int(a))
+lista_de_int=creare_lista_int(a)
+afisare_lista(lista_de_int)
 print("creare lista float")
-print(creare_lista_float(a))
+lista_de_float=creare_lista_float(a)
+afisare_lista(lista_de_float)
