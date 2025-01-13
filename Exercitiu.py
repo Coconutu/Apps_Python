@@ -73,3 +73,12 @@ functia_mea(a=1,b=2,c=4)
 def functia_mea(**x):
     print(x['unu'],x['doi'],x['trei'])
 functia_mea(trei='a',doi='b',unu='c')
+
+# În cadrul codului nostru, putem avea nevoie câteodată de anumite mici funcții fără nume, cu unul sau mai mulți parametri,
+# iar corpul să conțină o unică expresie – ceva rapid și ușor! Forma generală este
+medie=lambda x,y:(x+y)/2
+print(medie(4,6))
+print( (lambda x,y : (x+y)/2)(100,200) )
+print( (lambda x,y : (x+y)/2)(100,200))
+suma=lambda a,b: a+b
+print(suma(10,20))
