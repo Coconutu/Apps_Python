@@ -10,3 +10,14 @@ def inc():
 # Folosirea lui global în afara funcțiilor nu are niciun efect.
 inc()
 print(x)
+
+x = 6
+print(x)
+
+def adunare(a):
+    global x
+    x = x + a
+
+adunare(8)
+print(x)
+
