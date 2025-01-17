@@ -32,3 +32,20 @@ for k in range(len(teste_efectuate)):
     print('Au fost ',int(cazuri_noi[k]), " de cazuri noi, fiind efectuate ",int(teste_efectuate[k])," teste")
 
 #introducere date noi
+
+te=int(input("Introduceti numarul de teste efectuate"))
+teste_efectuate.append(te)
+cn=int(input("Introduceti numarul de cazuri noi"))
+cazuri_noi.append(cn)
+for k in range(len(teste_efectuate)):
+    print('Au fost ',int(cazuri_noi[k]), " de cazuri noi, fiind efectuate ",int(teste_efectuate[k])," teste")
+
+with open("covid.in","w") as f:
+    for i in cazuri_noi:
+        f.write(str(i))
+
+    f.write("\n")
+    for j in teste_efectuate:
+        f.write(str(j))
+    f.write("\n")
+
