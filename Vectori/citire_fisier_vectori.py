@@ -11,3 +11,4 @@ def scrie_f(v):
         for el in v:
             f.write(str(el)+" ")
         f,write("\n")
+# add comment
