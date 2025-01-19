@@ -19,6 +19,7 @@ for i in cazuri_noi_n:
         numar=""
 print(cazuri_noi)
 
+
 numar=""
 teste_efectuate=[] #prelucrare lista teste efectuate
 for i in teste_efectuate_n:
