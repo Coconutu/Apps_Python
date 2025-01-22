@@ -8,8 +8,22 @@ n=int(input("Numarul de componente ale vectorului. n="))
 #citim vectorul
 v=[]
 for i in range (n):
-    c=input("v["+str(i)+"]=")
+    c=int(input("v["+str(i)+"]="))
     v.append(c)
+numitor=max(v)
+index=0
+i=0
+for i in range(n):
+    if numitor==v[i]:
+        break
+
+# print("Numitor",numitor)
+v.pop(i)
+numarator=max(v)
+# print("Numarator=",numarator)
+print("Numarul rational:",numarator,"/",numitor)
+
+
 
 
 
