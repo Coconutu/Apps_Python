@@ -35,6 +35,14 @@ for i in range(n-1):
     B[i]=man
 print("Dupa sortare descrescatoare")
 uv.afisare(B)
+#metoda folosind functia sorted
+n,V=uv.citeste_f("int")
+print("Sortare folosind functia sorted")
+V_crescator=sorted(V)
+V_descrescator=sorted(V,reverse=True)
+uv.afisare(V_crescator)
+uv.afisare(V_descrescator)
+
 
 
 
