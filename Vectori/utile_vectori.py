@@ -12,12 +12,12 @@ def citeste_f(tip):
         n=int(f.readline())
         linie_sir=f.readline().replace("\n"," ")
         linie_lista=linie_sir.split()
-        if tip=="int"
+        if tip=="int":
             return[n,[int(el) for el in linie_lista]]
-        elif tip=="float"
+        elif tip=="float":
             return[n,[float(el) for el in linie_lista]]
         else:
-            return [n, linie_lista]]
+            return [n, linie_lista]
 
 def afisare(v):
     for el in v:
