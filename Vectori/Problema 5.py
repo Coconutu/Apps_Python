@@ -20,11 +20,19 @@ uv.afisare(a_sortat)
 uv.afisare(b_sortat)
 interclasat=[]
 k=0
-for i in range(min(len(a_sortat),len(b_sortat))):
+lungime_a_sortat=len(a_sortat)
+lungime_b_sortat=len(b_sortat)
+
+
+for i in range(min(lungime_a_sortat,lungime_b_sortat)):
     interclasat.append(a_sortat[i])
     interclasat.append(b_sortat[i])
     k+=1
-for l in range(k,max(len(a_sortat),len(b_sortat))):
+for l in range(k,max(lungime_a_sortat,lungime_b_sortat)):
+    if lungime_a_sortat>lungime_b_sortat:
+        interclasat.append(a_sortat[l])
+    else:
+        interclasat.append(b_sortat[l])
 
 print("Vector interclasat")
 uv.afisare(interclasat)
