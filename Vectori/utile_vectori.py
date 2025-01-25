@@ -1,3 +1,6 @@
+def citeste_n():
+    n=int(input("Cate elemente are vectorul? "))
+    return n
 def citire(n,v,tip):
     for i in range(n):
         if tip=="int":
