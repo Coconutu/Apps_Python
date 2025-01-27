@@ -20,15 +20,25 @@ Cerinţe suplimentare
 2. În nici un program nu se va folosi instrucţiunea if.'''
 import numpy as np
 n=int(input("Cate linii/coloane are matricea ?"))
-m=[]
+matrice=[]
 linie=[]
 for i in range (n):
     print("Linia ",i+1)
     for i in range(n):
         linie.append(int(input("E["+str(i)+"]=")))
-    m.append(linie)
+    matrice.append(linie)
     linie=[]
 
-matrice=np.asmatrix(m)
-print(matrice)
+m=np.asmatrix(matrice)
+print(m)
+print("Suma elementelor aflate pe diagonala principala")
+suma=0
+for i in range(n):
+    suma=suma+m[i,i]
+print(suma)
 
+print("Suma elementelor aflate deasupra diagonalei principale")
+suma=0
+for i in range(0,n-1):
+    suma=suma+m[i,i+1]
+print(suma)
