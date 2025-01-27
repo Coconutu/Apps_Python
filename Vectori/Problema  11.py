@@ -15,9 +15,7 @@ Se cere:
 b1) suma elementelor aflate pe diagonala secundarǎ;
 b2) suma elementelor aflate deasupra diagonalei secundare;
 b3) suma elementelor aflate sub diagonala secundarǎ.
-Cerinţe suplimentare
-1. Pentru fiecare cerinţǎ se va face un program separat.
-2. În nici un program nu se va folosi instrucţiunea if.'''
+'''
 import numpy as np
 n=int(input("Cate linii/coloane are matricea ?"))
 matrice=[]
@@ -31,14 +29,29 @@ for i in range (n):
 
 m=np.asmatrix(matrice)
 print(m)
-print("Suma elementelor aflate pe diagonala principala")
+print("a) Suma elementelor aflate pe diagonala principala")
 suma=0
 for i in range(n):
     suma=suma+m[i,i]
 print(suma)
 
-print("Suma elementelor aflate deasupra diagonalei principale")
+print("b) Suma elementelor de deasupra diagonalei principale")
 suma=0
-for i in range(0,n-1):
-    suma=suma+m[i,i+1]
+for i in range(n):
+    for j in range(n):
+        if j>i:
+            suma=suma+m[i,j]
+print(suma)
+
+print("b) Suma elementelor de dedesubtul diagonalei principale")
+suma=0
+for i in range(n):
+    for j in range(n):
+        if i>j:
+            suma=suma+m[i,j]
+print(suma)
+
+print("b1) Suma elementelor aflate pe diagonala secundara")
+suma=0
+
 print(suma)
