@@ -21,10 +21,11 @@ Cerinţe suplimentare
 n=int(input("Cate linii/coloane are matricea ?"))
 matrice=[]
 linie=[]
-for i in range(n):
-    for l in range(n):
-        linie.append(int(input("E["+str(l)+"]=")))
+for i in range (n):
+    print("Linia ",i+1)
+    for i in range(n):
+        linie.append(int(input("E["+str(i)+"]=")))
     matrice.append(linie)
+    linie=[]
 print(matrice)
-
 
