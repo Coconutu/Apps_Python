@@ -18,14 +18,17 @@ b3) suma elementelor aflate sub diagonala secundarǎ.
 Cerinţe suplimentare
 1. Pentru fiecare cerinţǎ se va face un program separat.
 2. În nici un program nu se va folosi instrucţiunea if.'''
+import numpy as np
 n=int(input("Cate linii/coloane are matricea ?"))
-matrice=[]
+m=[]
 linie=[]
 for i in range (n):
     print("Linia ",i+1)
     for i in range(n):
         linie.append(int(input("E["+str(i)+"]=")))
-    matrice.append(linie)
+    m.append(linie)
     linie=[]
+
+matrice=np.asmatrix(m)
 print(matrice)
 
