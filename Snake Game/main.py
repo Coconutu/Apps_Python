@@ -12,7 +12,16 @@ BACKGROUND_COLOR="black"
 class Snake:
     pass
 class Food:
-    pass
+    def __init__(self): #this will construct food object
+        x=random.randint(0,int((GAME_WIDTH/SPACE_SIZE))-1)*SPACE_SIZE
+        Y=random.randint(0,int((GAME_HEIGHT/SPACE_SIZE))-1)*SPACE_SIZE
+        self.coordinates=[x,y]
+        canvas.create_oval(x,y,x+SPACE_SIZE,y+SPACE_SIZE,fill=FOOD_COLOR,tag="food")
+
+
+
+
+
 
 def next_turn():
     pass
@@ -38,9 +47,12 @@ window_width=window.winfo_width()
 window_height=window.winfo_height()
 screen_width=window.winfo_screenwidth()
 screen_height=window.winfo_screenheight()
-x=(screen_width/2)-(window_width/2)
-y=(screen_height/2)-(window_height/2)
-window.geometry(f"{window_width}x{window_height}")
+x=int(((screen_width/2)-(window_width/2)))
+y=int(((screen_height/2)-(window_height/2)))
+window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+snake=Snake()
+food=Food()
+
 
 '''min 7:50'''
 
