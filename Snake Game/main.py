@@ -54,7 +54,7 @@ snake=Snake()
 food=Food()
 
 
-'''min 7:50'''
+'''min 11:34'''
 
 
 
