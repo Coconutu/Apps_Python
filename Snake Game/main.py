@@ -7,7 +7,7 @@ SPACE_SIZE=50
 BODY_PARTS=3
 SNAKE_COLOR="green"
 FOOD_COLOR="red"
-Background_color="black"
+BACKGROUND_COLOR="black"
 
 class Snake:
     pass
@@ -22,6 +22,23 @@ def check_collisions():
     pass
 def game_over():
     pass
+
+window=Tk()
+window.title("Snake Game")
+window.resizable(False,False)
+score=0
+direction="down"
+
+label=Label(window,text="Score:{}".format(score),font=("consolas",40))
+label.pack()
+canvas=Canvas(window,bg=BACKGROUND_COLOR,height=GAME_HEIGHT,width=GAME_WIDTH)
+canvas.pack()
+window.update()
+window_width=window.winfo_width()
+window_height=window.winfo_height()
+
+
+window.mainloop()
 
 
 
