@@ -11,9 +11,10 @@ def suma(n):
         return n
 print("Suma este",suma(7))
 
-def produsul(n):
-    if n>0:
-        return n*(n-1)
+
+def fact(n):
+    if n==0:
+        return 1
     else:
-        return n
-print(produsul(3))
+        return n*fact(n-1)
+print(fact(5))
