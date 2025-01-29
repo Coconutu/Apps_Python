@@ -4,12 +4,12 @@ def recursiv1(n):
         recursiv1(n-1)
 recursiv1(7)
 
-def suma(n):
+def suma1(n):
     if n>0:
-        return n+suma(n-1)
+        return n+suma1(n-1)
     else:
         return n
-print("Suma este",suma(7))
+print("Suma este",suma1(7))
 
 
 def fact(n):
@@ -26,3 +26,19 @@ def fib(n):
 
 for i in range (21):
     print("fib("+str(i)+")=",fib(i))
+
+'''1. Calculaţi recursiv suma a n numere naturale citite.'''
+def sumap(n):
+    if n>0:
+        return n+sumap(n-1)
+    else:
+        return n
+print(sumap(4))
+
+'''Calculaţi recursiv expresiile:
+a) 1*2+2*3+...+n*(n+1);'''
+def expr(n):
+    if n>0:
+        return n*(n+1)+expr(n-1)
+    else:return n
+print(expr(3))
