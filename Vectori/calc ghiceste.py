@@ -5,6 +5,7 @@ răspunde prin:
 1, dacă numărul este prea mare;
 2, dacă numărul este prea mic;
 0, dacă numărul a fost ghicit.'''
+#recursiv
 import random
 a=0
 b=30000
