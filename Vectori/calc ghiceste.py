@@ -29,5 +29,6 @@ def ghiceste(a,b):
         ghiceste(a,b)
     else:
         print("Apasati 1 daca numarul este prea mare, 2 daca este prea mic si 0 daca este cel la care v-ati gandit!")
+print("Gandeste-te la un numar intre 1 si 30000. Eu voi incerca sa il nimeresc")
 ghiceste(1,30000)
 
