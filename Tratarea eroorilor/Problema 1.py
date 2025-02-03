@@ -15,3 +15,4 @@ def citeste():
     if n>=1 or n<=5:
         return n
 print(citeste())
+#rezolvat
