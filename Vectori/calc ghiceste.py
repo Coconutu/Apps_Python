@@ -8,7 +8,7 @@ răspunde prin:
 #recursiv
 import random
 a=0
-b=30000
+b=100
 def genereaza_int(a,b):
     n=random.randint(a,b)
     return n
@@ -23,13 +23,13 @@ def ghiceste(a,b):
         ghicit=True
         print("Felicitari !")
     elif n==2:
-        a=i
+        a=i+1
         ghiceste(a,b)
     elif n==1:
-        b=i
+        b=i-1
         ghiceste(a,b)
     else:
         print("Apasati 1 daca numarul este prea mare, 2 daca este prea mic si 0 daca este cel la care v-ati gandit!")
-print("Gandeste-te la un numar intre 1 si 30000. Eu voi incerca sa il nimeresc")
-ghiceste(1,30000)
+print("Gandeste-te la un numar intre 1 si 100. Eu voi incerca sa il nimeresc")
+ghiceste(1,100)
 
