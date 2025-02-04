@@ -1,6 +1,6 @@
 '''Scrieţi un subprogram recursiv prin care calculatorul ghiceşte un număr
 natural ascuns de dumneavoastră (numărul este cuprins între 1
-şi 30000). Atunci când calculatorul propune un număr i, se va
+şi 100). Atunci când calculatorul propune un număr i, se va
 răspunde prin:
 1, dacă numărul este prea mare;
 2, dacă numărul este prea mic;
