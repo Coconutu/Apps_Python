@@ -1,12 +1,10 @@
 import tkinter as tk
-#o instanta a ferestrei principale
-aplicatie=tk.Tk()
+aplicatie=tk.Tk()#o instanta a ferestrei principale
+aplicatie.title("Prima mea aplicatie")#setez titlul ferestrei
+aplicatie.geometry("400x300")#setez dimensiunea ferestrei
+eticheta=tk.Label(aplicatie,text="Bine ati venit!")
+eticheta.pack()
+buton=tk.Button(aplicatie,text="ok",command=lambda:print("Buton apasat"))
+buton.pack()
 
-#setez titlul ferestrei
-aplicatie.title("Prima mea aplicatie")
-
-#setez dimensiunea ferestrei
-aplicatie.geometry("400x300")
-
-#pornesc bucla evenimentului principal
-aplicatie.mainloop()
+aplicatie.mainloop()#pornesc bucla evenimentului principal
