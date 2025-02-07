@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox as mb
 aplicatie=tk.Tk()#o instanta a ferestrei principale
 aplicatie.title("Prima mea aplicatie")#setez titlul ferestrei
 aplicatie.iconbitmap("python.ico")
