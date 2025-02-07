@@ -12,6 +12,7 @@ def deschide_fereastra_noua():
     eticheta.pack()
 
     def inchide_fereastra_noua():
+        ms.showerror("Eroare falsa","Eroare doar in scop didactic.")
         fereastra_noua.destroy()
 
     buton_inchidere_fereastra_noua = tk.Button(fereastra_noua, text="Buton inchidere fereastra noua",
