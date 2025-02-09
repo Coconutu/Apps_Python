@@ -11,12 +11,11 @@ def solicita_informatie(info):
     if rezultat:
         date_utilizator[info]=rezultat
         if all(date_utilizator.values()):
-            mesaj=f"Bun venit,{date_utilizator['Nume']},{date_utilizator['Prenume']}!\n"
-            f"Emailul tau,{date_utilizator['Email']},a fost inregistrat cu succes."
+            mesaj=f"Bun venit,{date_utilizator['Nume']},{date_utilizator['Prenume']}!.Emailul tau,{date_utilizator['Email']},a fost inregistrat cu succes."
             mb.showinfo("Inregistrare completa",mesaj)
 aplicatie=tk.Tk()
 aplicatie.title("Inregistrare")
-buton_n=tk.Button(aplicatie,"Introduceti numele",command=lambda:solicita_informatie("Nume"));buton_n.pack()
-buton_p=tk.Button(aplicatie,"Introduceti prenumele",command=lambda:solicita_informatie("Prenume"));buton_p.pack()
-buton_e=tk.Button(aplicatie,"Introduceti emailul",command=lambda:solicita_informatie("Email"));buton_e.pack()
+buton_n=tk.Button(aplicatie,text="Introduceti numele",command=lambda:solicita_informatie("Nume"));buton_n.pack()
+buton_p=tk.Button(aplicatie,text="Introduceti prenumele",command=lambda:solicita_informatie("Prenume"));buton_p.pack()
+buton_e=tk.Button(aplicatie,text="Introduceti emailul",command=lambda:solicita_informatie("Email"));buton_e.pack()
 aplicatie.mainloop()
