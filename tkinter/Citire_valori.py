@@ -21,6 +21,12 @@ aplicatie.title("Citirea unui numar intreg")
 aplicatie.geometry("300x200")
 buton1=tk.Button(aplicatie,text="nr1",command=citeste_numar_1);buton1.pack()
 buton2=tk.Button(aplicatie,text="nr2",command=citeste_numar_2);buton2.pack()
+buton3=tk.Button(aplicatie,text="Afisare rezultat",command=afisare_rezultat);buton3.pack()
+aplicatie.mainloop()
+
+
+
+
 
 
 
