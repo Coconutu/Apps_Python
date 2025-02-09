@@ -29,7 +29,10 @@ def afisare_mesaj():
 
 def citeste_numar():
     rezultat=askinteger("Citeste date","Introduceti un numar intreg intre 1 si 100",minvalue=1,maxvalue=100)
-    ms.showinfo("Valoare citita","A fost introdusa valoarea "+str(rezultat))
+    if rezultat!=None:
+        ms.showinfo("Valoare citita","A fost introdusa valoarea "+str(rezultat))
+    else:
+        ms.showerror("Eroare","Nu a fost introdusa nicio valoare!")
 aplicatie=tk.Tk()
 aplicatie.iconbitmap("python.ico")
 aplicatie.geometry("400x300+550+250")
