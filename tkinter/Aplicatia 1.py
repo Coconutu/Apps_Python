@@ -19,3 +19,10 @@ buton_n=tk.Button(aplicatie,text="Introduceti numele",command=lambda:solicita_in
 buton_p=tk.Button(aplicatie,text="Introduceti prenumele",command=lambda:solicita_informatie("Prenume"));buton_p.pack()
 buton_e=tk.Button(aplicatie,text="Introduceti emailul",command=lambda:solicita_informatie("Email"));buton_e.pack()
 aplicatie.mainloop()
+
+'''Ocolirea unei limitări. Butoanele nu pot accepta direct funcții cu parametri 
+prin atributul command deoarece acesta se așteaptă să primească o 
+referință la o funcție fără parametri. Utilizarea expresiilor lambda permite 
+ocolirea acestui neajuns, creând o funcție anonimă care apelează funcția 
+dorită cu parametrii specifici, facilitând astfel transmiterea de argumente 
+către funcțiile apelate de la butoane.'''
