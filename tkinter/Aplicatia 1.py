@@ -11,7 +11,7 @@ def solicita_informatie(info):
     if rezultat:
         date_utilizator[info]=rezultat
         if all(date_utilizator.values()):
-            mesaj=f"Bun venit,{date_utilizator['Nume']},{date_utilizator['Prenume']}!.Emailul tau,{date_utilizator['Email']},a fost inregistrat cu succes."
+            mesaj=f"Bun venit,{date_utilizator['Nume']},{date_utilizator['Prenume']}!\nEmailul tau,{date_utilizator['Email']},a fost inregistrat cu succes."
             mb.showinfo("Inregistrare completa",mesaj)
 aplicatie=tk.Tk()
 aplicatie.title("Inregistrare")
