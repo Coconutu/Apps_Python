@@ -16,7 +16,7 @@ for color in colors:
     subcadru=tk.Frame(cadru_central,borderwidth=5,relief='ridge')
     subcadru.pack(side='left',expand=True,padx=5,fill='both')
     label=tk.Label(subcadru,text="33%",bg=color)
-    label.pack(Expand=True)
+    label.pack(expand=True)
 #cadru pentru footer
 cadru_footer=tk.Frame(aplicatie,height=60,bg='lightgray')
 cadru_footer.pack(fill="x",side='bottom')
