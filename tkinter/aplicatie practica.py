@@ -1,0 +1,11 @@
+import tkinter as tk
+aplicatie=tk.Tk()
+aplicatie.title("Organizarea componentelor")
+cadru=tk.Frame(aplicatie,width=400, height=300,bg='lightblue',borderwidth='3',relief='groove',cursor='hand2')
+cadru.pack_propagate(False)
+cadru.pack()
+eticheta1=tk.Label(cadru,text="Eticheta din cadru - stanga",padx=5,pady=5)
+eticheta1.pack(side='left')
+eticheta2=tk.Label(cadru,text="Eticheta din cadru - dreapta",padx=5,pady=5)
+eticheta2.pack(side='right')
+aplicatie.mainloop()
