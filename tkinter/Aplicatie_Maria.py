@@ -2,17 +2,16 @@ import random
 import tkinter as tk
 rezultat=[1,1,1]
 
-def genereaza_impartire():
+def genereaza_numere():
     a = random.randint(10, 30)
     b = random.randint(1, 9)
-    c = a * b
-    rezultat = [a, b, c]
-    return rezultat
+    return a,b
 
-def trimite_raspuns():
-    raspuns=int(casuta_text.get())
-    if raspuns:
-        if
+def verifica_raspuns(c,a,b):
+    c=int(casuta_text.get())
+    if c=a*b:
+        return "Raspuns corect"
+
 
 
 
