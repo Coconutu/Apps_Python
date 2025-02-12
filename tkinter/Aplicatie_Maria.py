@@ -25,9 +25,9 @@ eticheta2 = tk.Label(aplicatie, text=str(a * b) + " : " + str(b) + " = ", font=f
 eticheta2.place(x=10, y=50)
 casuta_text = tk.Entry(aplicatie, font=font_etichete)
 casuta_text.place(x=100, y=50, width=50)
-eticheta_corecte= tk.Label(aplicatie, text="Corecte :", font=font_etichete)
+eticheta_corecte= tk.Label(aplicatie, text="Corecte : 0", font=font_etichete)
 eticheta_corecte.place(x=10, y=100)
-eticheta_incorecte=tk.Label(aplicatie, text="Greșite :", font=font_etichete)
+eticheta_incorecte=tk.Label(aplicatie, text="Greșite : 0", font=font_etichete)
 eticheta_incorecte.place(x=10, y=150)
 
 def verifica_raspuns():
@@ -43,7 +43,7 @@ def verifica_raspuns():
             casuta_text.delete(0, tk.END)
         else:
             gresite+=1
-            eticheta_incorecte.config(text="Greșite :"+str(gresite))
+            eticheta_incorecte.config(text="Greșite : "+str(gresite))
     except ValueError:
         eticheta_corecte.config(text="Eroare! Introduceti rezultatul in casuta text!",font=font_butoane)
 
