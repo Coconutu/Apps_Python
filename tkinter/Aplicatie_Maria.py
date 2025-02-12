@@ -25,18 +25,19 @@ eticheta2 = tk.Label(aplicatie, text=str(a * b) + " : " + str(b) + " = ", font=f
 eticheta2.place(x=10, y=50)
 casuta_text = tk.Entry(aplicatie, font=font_etichete)
 casuta_text.place(x=100, y=50, width=50)
-eticheta_corecte= tk.Label(aplicatie, text="Corecte", font=font_etichete)
+eticheta_corecte= tk.Label(aplicatie, text="Corecte :", font=font_etichete)
 eticheta_corecte.place(x=10, y=100)
-eticheta_incorecte tk.Label(aplicatie, text="Greșite", font=font_etichete)
+eticheta_incorecte=tk.Label(aplicatie, text="Greșite :", font=font_etichete)
 eticheta_incorecte.place(x=10, y=150)
 
 def verifica_raspuns():
-    global count
+    global count,corecte,gresite
+
     try:
-        total+=1
+
         if int(casuta_text.get()) == a:
             corecte+=1
-            eticheta_corecte.config(text="Corecte :"+str(corecte))
+            eticheta_corecte.config(text="Corecte : "+str(corecte))
             genereaza_numere()
             eticheta2.config(text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
             casuta_text.delete(0, tk.END)
