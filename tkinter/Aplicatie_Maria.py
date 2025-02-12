@@ -5,10 +5,12 @@ font_etichete = ("Arial", 16)
 font_butoane = ("Arial", 13)
 corecte = 0
 gresite = 0
-MINIM = 5
-MAXIM = 30
-a = random.randint(MINIM, MAXIM)
-b = random.randint(MINIM, MAXIM)
+MIN_A = 5
+MAX_A = 30
+MIN_B = 5
+MAX_B = 10
+a = random.randint(MIN_A, MAX_A)
+b = random.randint(MIN_B, MAX_B)
 c = a * b
 aplicatie = tk.Tk()
 aplicatie.resizable(False, False)
@@ -28,8 +30,8 @@ eticheta_incorecte.place(x=10, y=150)
 
 def genereaza_numere():
     global a, b, c
-    a = random.randint(MINIM, MAXIM)
-    b = random.randint(MINIM, 9)
+    a = random.randint(MIN_A, MAX_A)
+    b = random.randint(MIN_B, MAX_B)
     c = a * b
     eticheta2.config(text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
     casuta_text.delete(0, tk.END)
