@@ -1,38 +1,51 @@
 import random
 import tkinter as tk
-from tkinter import messagebox as ms
+
+font_etichete = ("Arial", 16)
+font_butoane = ("Arial", 13)
+
+corecte=0
+gresite=0
 
 def genereaza_numere():
-    f1 = random.randint(1, 5)
-    f2 = random.randint(1, 3)
-    return f1,f2
+    global a, b, c
+    a = random.randint(10, 15)
+    b = random.randint(2, 9)
+    c = a * b
 
-a,b=genereaza_numere()
+
+genereaza_numere()
 aplicatie = tk.Tk()
-aplicatie.geometry('300x200')
+aplicatie.resizable(False, False)
+aplicatie.geometry('350x200')
 aplicatie.title("Calcule Maria")
-eticheta1 = tk.Label(aplicatie, text="Efectueaza împărțirile :")
-eticheta1.pack(padx=10,pady=10)
-eticheta2 = tk.Label(aplicatie, text="Verificare rezultat")
-eticheta2.pack(padx=10,pady=10)
-eticheta3 = tk.Label(aplicatie, text=str(a*b) + " : " + str(a) + " = ")
-eticheta3.pack(padx=10,pady=10)
-casuta_text = tk.Entry(aplicatie)
-casuta_text.pack(padx=10,pady=10)
+eticheta1 = tk.Label(aplicatie, text="Efectueaza împărțirile :", font=font_etichete)
+eticheta1.place(x=10, y=10)
+eticheta2 = tk.Label(aplicatie, text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
+eticheta2.place(x=10, y=50)
+casuta_text = tk.Entry(aplicatie, font=font_etichete)
+casuta_text.place(x=100, y=50, width=50)
+eticheta_corecte= tk.Label(aplicatie, text="Corecte", font=font_etichete)
+eticheta_corecte.place(x=10, y=100)
+eticheta_incorecte tk.Label(aplicatie, text="Greșite", font=font_etichete)
+eticheta_incorecte.place(x=10, y=150)
 
-def verifica_raspuns(pr,f1,f2):
-    if pr==f1*f2:
-        eticheta2.config(text="Raspuns corect")
+def verifica_raspuns():
+    global count
+    try:
+        total+=1
+        if int(casuta_text.get()) == a:
+            corecte+=1
+            eticheta_corecte.config(text="Corecte :"+str(corecte))
+            genereaza_numere()
+            eticheta2.config(text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
+            casuta_text.delete(0, tk.END)
+        else:
+            gresite+=1
+            eticheta_incorecte.config(text="Greșite :"+str(gresite))
+    except ValueError:
+        eticheta_corecte.config(text="Eroare! Introduceti rezultatul in casuta text!",font=font_butoane)
 
-
-    else:
-        eticheta2.config(text="Raspuns incorect")
-
-
-
-
-
-buton1=tk.Button(aplicatie,text="Trimite rezultat",command=lambda:verifica_raspuns(int(casuta_text.get()),a,b))
-
-buton1.pack()
+buton1 = tk.Button(aplicatie, text="Trimite rezultat", font=font_butoane,command=verifica_raspuns)
+buton1.place(x=180, y=50)
 aplicatie.mainloop()
