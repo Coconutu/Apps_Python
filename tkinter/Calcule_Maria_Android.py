@@ -77,7 +77,7 @@ def verifica_raspuns():
         eticheta_corecte.config(text=" Introduceti rezultatul", font=font_etichete)
 
 
-buton1 = tk.Button(aplicatie, text="Trimite rezultat", font=font_butoane, command=verifica_raspuns, width=50, height=3,
+buton1 = tk.Button(aplicatie, text="Trimite rezultat", font=font_butoane, command=verifica_raspuns, width=30, height=2,
                    bg="lightblue", relief="raised", borderwidth=20)
 buton1.grid(row=7,column=0)
 aplicatie.mainloop()
