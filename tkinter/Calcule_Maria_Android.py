@@ -4,8 +4,8 @@ from tkinter import messagebox as ms
 
 from PIL.ImageOps import expand
 
-font_etichete = ("Arial", 16)
-font_butoane = ("Arial", 13)
+font_etichete = ("Arial", 16, 'bold')
+font_butoane = ("Arial", 13, 'bold')
 corecte = 0
 gresite = 0
 MIN_A = 8
@@ -39,14 +39,16 @@ eticheta_corecte = tk.Label(aplicatie, text="Corecte : 0", font=font_etichete)
 eticheta_corecte.pack()
 eticheta_incorecte = tk.Label(aplicatie, text="Greșite : 0", font=font_etichete)
 eticheta_incorecte.pack()
-cadru=tk.Frame(aplicatie)
-cadru.pack(fill='both',expand=True)
+cadru1=tk.Frame(aplicatie)
+cadru1.pack(fill='both',expand=True)
 for x in range(0,5):
-    buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.pack()
-for x in range(5,9):
-    buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.pack()
+    buton_nr=tk.Button(cadru1,text=str(x),borderwidth=5,width=5,height=2,font=font_butoane)
+    buton_nr.pack(side='left')
+cadru2 = tk.Frame(aplicatie)
+cadru2.pack(fill='both', expand=True)
+for x in range(5,10):
+    buton_nr=tk.Button(cadru2,text=str(x),borderwidth=5,width=5,height=2,font=font_butoane)
+    buton_nr.pack(side='left')
 
 def genereaza_numere():
     global a, b, c
