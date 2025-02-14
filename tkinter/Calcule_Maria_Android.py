@@ -26,23 +26,23 @@ def inchide_aplicatie():
 
 buton_inchide = tk.Button(aplicatie, text="X", font=("Arial", 15, "bold"), command=inchide_aplicatie, relief="raised",
                           borderwidth=10)
-buton_inchide.grid(row=0,column=10)
+buton_inchide.grid(row=0,column=4)
 eticheta1 = tk.Label(aplicatie, text="Efectueaza împărțirile :", font=font_etichete)
 eticheta1.grid(row=0,column=0)
 eticheta2 = tk.Label(aplicatie, text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
-eticheta2.grid(row=2,column=0)
+eticheta2.grid(row=1,column=0)
 casuta_text = tk.Entry(aplicatie, font=font_etichete)
 casuta_text.grid(row=2,column=0)
 eticheta_corecte = tk.Label(aplicatie, text="Corecte : 0", font=font_etichete)
-eticheta_corecte.grid(row=2,column=0)
+eticheta_corecte.grid(row=3,column=0)
 eticheta_incorecte = tk.Label(aplicatie, text="Greșite : 0", font=font_etichete)
-eticheta_incorecte.grid(row=3, column=0)
+eticheta_incorecte.grid(row=4, column=0)
 for x in range(0,5):
     buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.grid(row=4, column=2)
+    buton_nr.grid(row=5, column=x)
 for x in range(5,9):
     buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.grid(row=5,column=0)
+    buton_nr.grid(row=6,column=x-5)
 
 def genereaza_numere():
     global a, b, c
@@ -79,5 +79,5 @@ def verifica_raspuns():
 
 buton1 = tk.Button(aplicatie, text="Trimite rezultat", font=font_butoane, command=verifica_raspuns, width=50, height=3,
                    bg="lightblue", relief="raised", borderwidth=20)
-buton1.grid(row=6,column=0)
+buton1.grid(row=7,column=0)
 aplicatie.mainloop()
