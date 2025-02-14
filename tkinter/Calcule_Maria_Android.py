@@ -9,13 +9,13 @@ MIN_A = 8
 MAX_A = 20
 MIN_B = 2
 MAX_B = 9
-stop=3
+stop=10
 a = random.randint(MIN_A, MAX_A)
 b = random.randint(MIN_B, MAX_B)
 c = a * b
 aplicatie = tk.Tk()
 aplicatie.resizable(False, False)
-aplicatie.geometry('350x200')
+# aplicatie.geometry('350x200')
 aplicatie.title("Calcule Maria")
 def inchide_aplicatie():
 	aplicatie.destroy()
