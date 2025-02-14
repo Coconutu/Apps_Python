@@ -2,6 +2,8 @@ import random
 import tkinter as tk
 from tkinter import messagebox as ms
 
+from PIL.ImageOps import expand
+
 font_etichete = ("Arial", 16)
 font_butoane = ("Arial", 13)
 corecte = 0
@@ -26,23 +28,25 @@ def inchide_aplicatie():
 
 buton_inchide = tk.Button(aplicatie, text="X", font=("Arial", 15, "bold"), command=inchide_aplicatie, relief="raised",
                           borderwidth=10)
-buton_inchide.grid(row=0,column=10)
+buton_inchide.pack(anchor='ne')
 eticheta1 = tk.Label(aplicatie, text="Efectueaza împărțirile :", font=font_etichete)
-eticheta1.grid(row=2,column=0)
+eticheta1.pack()
 eticheta2 = tk.Label(aplicatie, text=str(a * b) + " : " + str(b) + " = ", font=font_etichete)
-eticheta2.grid(row=3,column=0)
+eticheta2.pack()
 casuta_text = tk.Entry(aplicatie, font=font_etichete)
-casuta_text.grid(row=5,column=0)
+casuta_text.pack()
 eticheta_corecte = tk.Label(aplicatie, text="Corecte : 0", font=font_etichete)
-eticheta_corecte.grid(row=6,column=0)
+eticheta_corecte.pack()
 eticheta_incorecte = tk.Label(aplicatie, text="Greșite : 0", font=font_etichete)
-eticheta_incorecte.grid(row=7, column=0)
+eticheta_incorecte.pack()
+cadru=tk.Frame(aplicatie)
+cadru.pack(fill='both',expand=True)
 for x in range(0,5):
     buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.grid(row=8, column=x,sticky = 'w')
+    buton_nr.pack()
 for x in range(5,9):
     buton_nr=tk.Button(aplicatie,text=str(x))
-    buton_nr.grid(row=9,column=x-5,sticky = 'w')
+    buton_nr.pack()
 
 def genereaza_numere():
     global a, b, c
@@ -79,5 +83,5 @@ def verifica_raspuns():
 
 buton1 = tk.Button(aplicatie, text="Trimite rezultat", font=font_butoane, command=verifica_raspuns, height=2,
                    bg="lightblue", relief="raised", borderwidth=20)
-buton1.grid(row=10,column=0)
+buton1.pack()
 aplicatie.mainloop()
