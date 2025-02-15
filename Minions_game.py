@@ -1,59 +1,43 @@
+def sortare(lista):
+    lista.sort(key=len)
+
+
+def extrage_punctaj(lista):
+    return len(lista)
+
+
 def minion_game(cuvant):
     vocale = ['A', 'E', 'I', 'O', 'U']
     consoane = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'V', 'Z']
     kevin = []
-    cuvant_list=list(cuvant)
-    print(cuvant_list)
-    '''
-    for c in vocale:
-        if c in cuvant:
+
+    for i in range(0, len(cuvant)):
+        if cuvant[i] in vocale:
             temp = ''
-            for x in range(cuvant.index(c), len(cuvant)):
-                temp = temp + cuvant[x]
+            for j in range(i, len(cuvant)):
+                temp = temp + cuvant[j]
                 kevin.append(temp)
+    sortare(kevin)
 
-    kevin.sort(key=len)
-
-    scor_kevin = 0
-
-    for temp in kevin:
-        start = 0
-        while True:
-            index = cuvant.find(temp, start)
-            if index == -1:
-                break
-            scor_kevin = scor_kevin + 1
-            start = index + 1
-
-    scor_stuart = 0
-    start_stuart = 0
     stuart = []
-    for c in consoane:
-        if c in cuvant:
+
+    for i in range(0, len(cuvant)):
+        if cuvant[i] in consoane:
             temp = ''
-            for x in range(cuvant.index(c), len(cuvant)):
-                temp = temp + cuvant[x]
+            for j in range(i, len(cuvant)):
+                temp = temp + cuvant[j]
                 stuart.append(temp)
-    stuart.sort(key=len)
+    sortare(stuart)
 
-    scor_stuart = 0
-
-    for temp in stuart:
-        start = 0
-        while True:
-            index = cuvant.find(temp, start)
-            if index == -1:
-                break
-            scor_stuart = scor_stuart + 1
-            start = index + 1
-
-    if max(scor_kevin, scor_stuart) == scor_kevin:
-        print("Kevin", scor_kevin)
+    if (extrage_punctaj(kevin) > extrage_punctaj(stuart)):
+        print('Kevin', extrage_punctaj(kevin))
+    elif (extrage_punctaj(stuart) > extrage_punctaj(kevin)):
+        print('Stuart', extrage_punctaj(stuart))
     else:
-        print("Stuart", scor_stuart)
+        print(extrage_punctaj(kevin), extrage_punctaj(stuart))
 
-'''
+
 if __name__ == '__main__':
-    #s = input()
-    minion_game('BANANA')
+    # s = input()
+    minion_game('BANAAANA')
 # incearca cuvantul BANAANAS
