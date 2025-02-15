@@ -38,6 +38,5 @@ def minion_game(cuvant):
 
 
 if __name__ == '__main__':
-    # s = input()
-    minion_game('BANAAANA')
-# incearca cuvantul BANAANAS
+    s = input()
+    minion_game(s)
