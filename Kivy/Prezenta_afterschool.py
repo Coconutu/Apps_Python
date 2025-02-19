@@ -3,6 +3,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 
 
 def citire_elevi():
@@ -27,19 +28,28 @@ class MyTabbedPanel(TabbedPanel):
 
         # Creăm al treilea tab
         tab3 = TabbedPanelItem(text='Editare elevi')
-
-        layout_vertical_1 = BoxLayout(orientation='vertical', padding=10)
-        input_elev = TextInput(text='Introduceti numele elevului', multiline=False)
-        layout_vertical_1.add_widget(input_elev)
-
-        layout_vertical_2 = BoxLayout(orientation='vertical', padding=10)
-        layout_vertical_2.add_widget(input_elev)
-        layout_vertical_2.add_widget(Label(text='Editare elevi 1'))
-        layout_vertical_2.add_widget(Label(text=citire_elevi()))
+        layout_principal=BoxLayout(orientation='vertical',padding=10)
+        layout_orizontal=BoxLayout(orientation='horizontal',padding=10)
+        input_elev = TextInput(text='', multiline=False,size_hint=(.5,.25))
+        buton_adaugare=Button(text='Adaugare',size_hint=(.5,.25))
 
 
-        tab3.add_widget(layout_vertical_1)
-        tab3.add_widget(layout_vertical_2)
+        layout_orizontal.add_widget(input_elev)
+        layout_orizontal.add_widget(buton_adaugare)
+
+        layout_vertical=BoxLayout(orientation='vertical',padding=10)
+        lista_elevi = Label(text=citire_elevi(), font_size='20')
+        layout_vertical.add_widget(lista_elevi)
+        layout_principal.add_widget(layout_orizontal)
+        layout_principal.add_widget(layout_vertical)
+        tab3.add_widget(layout_principal)
+
+
+
+
+
+
+
 
 
         self.add_widget(tab1)
