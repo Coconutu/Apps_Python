@@ -38,7 +38,7 @@ class MyTabbedPanel(TabbedPanel):
         layout_orizontal.add_widget(buton_adaugare)
 
         layout_vertical=BoxLayout(orientation='vertical',padding=10)
-        lista_elevi = Label(text=citire_elevi(), font_size='20')
+        lista_elevi = Label(text=citire_elevi(),font_size='20')
         layout_vertical.add_widget(lista_elevi)
         layout_principal.add_widget(layout_orizontal)
         layout_principal.add_widget(layout_vertical)
