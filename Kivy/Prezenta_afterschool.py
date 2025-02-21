@@ -35,29 +35,31 @@ class MyTabbedPanel(TabbedPanel):
 
         # Creăm al treilea tab
         tab3 = TabbedPanelItem(text='Editare elevi')
-        layout_principal = BoxLayout(orientation='vertical', padding=10)
-        layout_stanga = BoxLayout(orientation='horizontal', padding=10)
+        #cream cele trei layouturi
+        layout_principal = BoxLayout(orientation='horizontal', padding=10)
+        layout_stanga = BoxLayout(orientation='vertical', padding=10)
+        layout_dreapta = BoxLayout(orientation='vertical', padding=10)
+        layout_distantier=BoxLayout()
+        layout_principal.add_widget(layout_stanga)
+        layout_principal.add_widget(layout_dreapta)
+        tab3.add_widget(layout_principal)
 
         # Cream casuta de input
-        input_elev = TextInput(text='', multiline=False, size_hint=(.5, .20))
-
+        input_elev = TextInput(text='', multiline=False, size_hint=(1, None),height=50)
         # cream butonul de adaugare si stergere
-        buton_adaugare = Button(text='Adaugare', size_hint=(.5, .20))
+        buton_adaugare = Button(text='Adaugare', size_hint=(1, None),height=50)
         buton_adaugare.bind(on_press=lambda instance:adaugare_elev(input_elev.text))
-        buton_stergere = Button(text='Stergere', size_hint=(.5, .20))
+        buton_stergere = Button(text='Stergere', size_hint=(1, None),height=50)
+        lista_elevi = Label(text=citire_elevi(), font_size='20')
+
 
         # adaugam la layout casuta text si butonul de adaugare
         layout_stanga.add_widget(input_elev)
         layout_stanga.add_widget(buton_adaugare)
         layout_stanga.add_widget(buton_stergere)
-
-        # Cream inca un layout despartitor
-        layout_dreapta = BoxLayout(orientation='vertical', padding=50)
-        layout_stanga.add_widget(layout_dreapta)
-        lista_elevi = Label(text=citire_elevi(), font_size='20')
+        layout_stanga.add_widget(layout_distantier)
         layout_dreapta.add_widget(lista_elevi)
-        layout_principal.add_widget(layout_stanga)
-        tab3.add_widget(layout_principal)
+
 
         # adaugam taburile la aplicatia princupala
         self.add_widget(tab1)
