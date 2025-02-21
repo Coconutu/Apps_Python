@@ -11,9 +11,13 @@ def citire_elevi():
         citire = f.read()
         # citire.replace("\n", " ")
     return citire
+
+
 def adaugare_elev(elev):
-    with  open("elevi.dat","a") as f:
-        f.write(elev)
+    with  open("elevi.dat", "a") as f:
+        f.write(elev+"\n")
+
+    citire_elevi()
 
 
 class MyTabbedPanel(TabbedPanel):
@@ -31,14 +35,15 @@ class MyTabbedPanel(TabbedPanel):
 
         # Creăm al treilea tab
         tab3 = TabbedPanelItem(text='Editare elevi')
-        layout_principal = BoxLayout(orientation='vertical', padding=90)
-        layout_stanga = BoxLayout(orientation='horizontal', padding=20)
+        layout_principal = BoxLayout(orientation='vertical', padding=10)
+        layout_stanga = BoxLayout(orientation='horizontal', padding=10)
 
         # Cream casuta de input
         input_elev = TextInput(text='', multiline=False, size_hint=(.5, .20))
 
         # cream butonul de adaugare si stergere
         buton_adaugare = Button(text='Adaugare', size_hint=(.5, .20))
+        buton_adaugare.bind(on_press=lambda instance:adaugare_elev(input_elev.text))
         buton_stergere = Button(text='Stergere', size_hint=(.5, .20))
 
         # adaugam la layout casuta text si butonul de adaugare
@@ -46,16 +51,15 @@ class MyTabbedPanel(TabbedPanel):
         layout_stanga.add_widget(buton_adaugare)
         layout_stanga.add_widget(buton_stergere)
 
-        #Cream inca un layout despartitor
-        layout_dreapta=BoxLayout(orientation='vertical',padding=50)
+        # Cream inca un layout despartitor
+        layout_dreapta = BoxLayout(orientation='vertical', padding=50)
         layout_stanga.add_widget(layout_dreapta)
-        layout_vertical = BoxLayout(orientation='vertical', padding=10)
         lista_elevi = Label(text=citire_elevi(), font_size='20')
         layout_dreapta.add_widget(lista_elevi)
         layout_principal.add_widget(layout_stanga)
-        layout_principal.add_widget(layout_vertical)
         tab3.add_widget(layout_principal)
 
+        # adaugam taburile la aplicatia princupala
         self.add_widget(tab1)
         self.add_widget(tab2)
         self.add_widget(tab3)
