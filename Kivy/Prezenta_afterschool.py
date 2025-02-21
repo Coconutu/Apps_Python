@@ -11,6 +11,9 @@ def citire_elevi():
         citire = f.read()
         # citire.replace("\n", " ")
     return citire
+def adaugare_elev(elev):
+    with  open("elevi.dat","a") as f:
+        f.write(elev)
 
 
 class MyTabbedPanel(TabbedPanel):
