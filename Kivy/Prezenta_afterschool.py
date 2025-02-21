@@ -28,29 +28,30 @@ class MyTabbedPanel(TabbedPanel):
 
         # Creăm al treilea tab
         tab3 = TabbedPanelItem(text='Editare elevi')
-        layout_principal=BoxLayout(orientation='vertical',padding=10)
-        layout_orizontal=BoxLayout(orientation='horizontal',padding=10)
-        input_elev = TextInput(text='', multiline=False,size_hint=(.5,.25))
-        buton_adaugare=Button(text='Adaugare',size_hint=(.5,.25))
+        layout_principal = BoxLayout(orientation='vertical', padding=90)
+        layout_stanga = BoxLayout(orientation='horizontal', padding=20)
 
+        # Cream casuta de input
+        input_elev = TextInput(text='', multiline=False, size_hint=(.5, .20))
 
-        layout_orizontal.add_widget(input_elev)
-        layout_orizontal.add_widget(buton_adaugare)
+        # cream butonul de adaugare si stergere
+        buton_adaugare = Button(text='Adaugare', size_hint=(.5, .20))
+        buton_stergere = Button(text='Stergere', size_hint=(.5, .20))
 
-        layout_vertical=BoxLayout(orientation='vertical',padding=10)
-        lista_elevi = Label(text=citire_elevi(),font_size='20')
-        layout_vertical.add_widget(lista_elevi)
-        layout_principal.add_widget(layout_orizontal)
+        # adaugam la layout casuta text si butonul de adaugare
+        layout_stanga.add_widget(input_elev)
+        layout_stanga.add_widget(buton_adaugare)
+        layout_stanga.add_widget(buton_stergere)
+
+        #Cream inca un layout despartitor
+        layout_dreapta=BoxLayout(orientation='vertical',padding=50)
+        layout_stanga.add_widget(layout_dreapta)
+        layout_vertical = BoxLayout(orientation='vertical', padding=10)
+        lista_elevi = Label(text=citire_elevi(), font_size='20')
+        layout_dreapta.add_widget(lista_elevi)
+        layout_principal.add_widget(layout_stanga)
         layout_principal.add_widget(layout_vertical)
         tab3.add_widget(layout_principal)
-
-
-
-
-
-
-
-
 
         self.add_widget(tab1)
         self.add_widget(tab2)
