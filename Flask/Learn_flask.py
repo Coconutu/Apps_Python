@@ -1,17 +1,27 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def welcome():
-    return "Hello World!"
+def route():
+    return "We are on route!"
+
 
 @app.route('/hello')
-def welcome1():
-    return "Hello World!"
+def hello():
+    return "Hello!"
+
 
 @app.route('/welcome')
-def welcome2():
-    return "Hello World!"
+def welcome():
+    return "Welcome!"
+
+
+@app.route('/method', methods=['GET','POST'])
+def method():
+    if request.method == 'POST':
+        return "You're sent a POST request"
+    else:
+        return "You're probably using a GET request"
 app.run()
