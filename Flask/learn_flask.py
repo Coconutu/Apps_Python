@@ -1,21 +1,20 @@
-from flask import Flask, request
+from flask import Flask, request,render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/potato')
 def route():
-    return "We are on route!"
+    return "This is my first Flask app. Yay!"
 
 
-@app.route('/hello')
+@app.route('/')
 def hello():
-    return "Hello!"
+    return render_template("index.html")
 
-
-@app.route('/welcome')
-def welcome():
-    return "Welcome!"
+@app.route('/bob')
+def bob():
+    return "Yo Bob. What's hapening man!!"
 
 
 @app.route('/method', methods=['GET','POST'])
