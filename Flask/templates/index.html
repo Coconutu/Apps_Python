@@ -16,6 +16,8 @@
     <form class="pure-form" method="POST" action="/">
         Name:<br>
         <input type="text" name="username"><br>
+        Favorite food<br>
+        <input type="text" name="userfood"><br>
         <button type="submit" class="pure-button-primary" value="Submit">Submit</button>
 
     </form>
@@ -25,7 +27,8 @@
 <br>
 <div>
     {% if name %}
-        <p>Welcome to my site {{name}}</p>
+    <p>Welcome to my site {{name}}</p>
+    <p>Your favorite food is {{food}}</p>
     {%endif%}
 
 </div>
