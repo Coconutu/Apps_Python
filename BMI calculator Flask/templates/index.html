@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculare BMI</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+          integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+</head>
+<h1>Calculator BMI</h1>
+<body>
+<div>
+    <p>Introdu greutatea in kg</p>
+    <form class="pure-form pure-form-aligned" method="POST" action="/">
+        Greutate [kg]:<br>
+        <input type="text" name="greutateutilizator"><br>
+        Inaltime [cm]<br>
+        <input type="text" name="inaltimeutilizator"><br>
+        <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
+
+    </form>
+
+
+</div>
+<br>
+<div>
+    {% if greutate %}
+    <p>Greutatea dumneavoastra: {{greutate}}</p>
+    <p>Inaltimea dumneavoastra: {{inaltime}}</p>
+    <p>BMI-ul dumneavoastra: {{bmi}}</p>
+    {%endif%}
+
+</div>
+
+</body>
+</html>
