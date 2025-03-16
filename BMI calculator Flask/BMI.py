@@ -7,14 +7,18 @@ app = Flask(__name__)
 def calculate():
     greutate = ''
     inaltime = ''
-    bmi=0
-    inaltimecm=0
-    if request.method=="POST" and 'greutateutilizator' in request.form:
+    bmi = 0
+
+    if request.method == "POST" and 'greutateutilizator' in request.form:
         greutate = int(request.form.get('greutateutilizator'))
-        inaltimecm = int(request.form.get('inaltimeutilizator'))
-        inaltime=inaltimecm/100
-        bmi = round(greutate / (inaltime * inaltime),1)
+        inaltime = int(request.form.get('inaltimeutilizator'))
+        bmi=calculate_bmi(greutate, inaltime)
     return render_template('index.html', greutate=greutate, inaltime=inaltime, bmi=bmi)
+
+
+def calculate_bmi(greutate, inaltime):
+    inaltime = inaltime / 100
+    return round(greutate / (inaltime**2), 1)
 
 
 app.run()
